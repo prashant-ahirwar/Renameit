@@ -61,8 +61,8 @@ Toggle dark mode from the navbar. The choice is remembered in your browser (loca
 ```text
 RenameIt/
 ├─ app.py
-├─ templates/
-│  └─ index.html
+├─ index.html
+├─ requirements.txt
 └─ static/
    ├─ style.css
    ├─ dark.css
