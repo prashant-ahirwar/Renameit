@@ -5,7 +5,12 @@ import re
 import io
 from werkzeug.utils import secure_filename
 
-app = Flask(__name__)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+app = Flask(
+    __name__,
+    template_folder=BASE_DIR,
+    static_folder=os.path.join(BASE_DIR, "static"),
+)
 
 # ------------------------
 # Config
@@ -33,16 +38,6 @@ def clean_text(text, options):
 
 
 def build_new_filename(prefix, ext, counter, numbering_style, digits):
-    """Create a new filename based on the requested numbering style.
-
-    numbering_style:
-      - pad: prefix_001.ext
-      - pad-dot: prefix_001.ext (dot before extension is handled by normal ext)
-      - paren: prefix_(1).ext
-      - dash: prefix-1.ext
-      - underscore: prefix_1.ext
-      - none: prefix.ext
-    """
 
     style = (numbering_style or "pad").strip().lower()
     try:
@@ -66,7 +61,6 @@ def build_new_filename(prefix, ext, counter, numbering_style, digits):
 
 
 def ensure_unique_name(used_names, filename):
-    """Ensure we don't duplicate names inside the ZIP by suffixing _N as needed."""
     if filename not in used_names:
         used_names.add(filename)
         return filename
@@ -102,7 +96,6 @@ def index():
         used_names = set()
         counter = 1
 
-        # Build ZIP in-memory (no renamed/ folder, no files written to disk)
         zip_buffer = io.BytesIO()
         with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zipf:
             for file in files:
