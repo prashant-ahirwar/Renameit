@@ -1,0 +1,340 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    background-color: #e5e5f7;
+    opacity: 1;
+    background-image:  linear-gradient(#000000 1.5px, transparent 1.5px), linear-gradient(to right, #000000 1.5px, #e5e5f7 1.5px);
+    background-size: 30px 30px;;
+    color: #111;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: #fff;
+    border-bottom: 4px solid #000;
+}
+
+.navbar__title {
+    font-family: "Raleway", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: 0.5px;
+}
+
+.navbar__toggle {
+    border: 3px solid #000;
+    background: #fff;
+    width: 44px;
+    height: 38px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #000;
+}
+
+.navbar__toggle:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #000;
+}
+
+.page {
+    padding: 20px;
+    min-height: calc(100vh - 70px);
+    width:100%;
+}
+
+.panel {
+    padding: 20px;
+    background: #fff;
+    border: 4px solid #000;
+    box-shadow: 2px 2px 0 #000;
+
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1.25fr 0.25fr;
+    gap: 18px;
+    align-items: start;
+    max-width: 100%;
+    margin: 0; /* keep panels to the left */
+}
+
+@media (max-width: 1100px) {
+    .split {
+        grid-template-columns: 1fr;
+    }
+}
+
+.panel--rename {
+
+    width: auto;
+}
+
+.panel--info {
+  width: 350px;
+  height:fit-content;
+}
+
+.info-title {
+    margin: 0 0 10px 0;
+    font-family: "Raleway", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.2px;
+}
+
+.info-block {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 2px dashed #000;
+}
+
+.info-block:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.info-block h3 {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    font-family: "Raleway", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+.info-block p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.info-block ol,
+.info-block ul {
+    margin: 6px 0 0 16px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Form */
+.label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 3px solid black;
+    margin-top: 5px;
+}
+
+.primary {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: yellow;
+    border: 3px solid black;
+    font-weight: bold;
+    font-family: "Raleway", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 black;
+}
+
+.primary:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 black;
+}
+
+.helper {
+    margin-top: 8px;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.drop-zone {
+    border: 4px dashed black;
+    padding: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    background: #fafafa;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.drop-zone.dragover {
+    background: yellow;
+}
+
+.drop-zone__hint {
+    text-align: center;
+    user-select: none;
+}
+
+.drop-zone__headline {
+    font-weight: 900;
+    margin-bottom: 4px;
+}
+
+.drop-zone__sub {
+    font-size: 12px;
+}
+
+.file-list {
+    border: 3px solid #000;
+    background: #fff;
+    padding: 10px;
+    max-height: 190px;
+    overflow-y: auto;
+    font-size: 12px;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 6px 4px;
+    border-bottom: 1px dashed #000;
+}
+
+.file-item:last-child {
+    border-bottom: none;
+}
+
+.file-item__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-item__meta {
+    opacity: 0.75;
+    flex: 0 0 auto;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
+
+.checkbox-group label {
+    font-size: 14px;
+    font-family: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Custom checkbox look (still uses real input for accessibility) */
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #000;
+    background: transparent;
+    display: inline-grid;
+    place-content: center;
+    margin: 0;
+}
+
+.checkbox-group input[type="checkbox"]::before {
+    content: "";
+    width: 6px;
+    height: 10px;
+    transform: rotate(45deg) scale(0);
+    transition: transform 90ms ease-in-out;
+    border-right: 3px solid #000;
+    border-bottom: 3px solid #000;
+}
+
+.checkbox-group input[type="checkbox"]:checked::before {
+    transform: rotate(45deg) scale(1);
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background: #39d353; /* GitHub-like green */
+}
+
+.checkbox-group input[type="checkbox"]:focus-visible {
+    outline: 3px solid #2b77ff;
+    outline-offset: 2px;
+}
+
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 3px solid black;
+    margin-top: 5px;
+    background: white;
+}
+
+.preview {
+    margin-top: 15px;
+    padding: 10px;
+    border: 3px dashed black;
+    max-height: 220px;
+    overflow-y: auto;
+    background: #f7f7f7;
+    font-size: 12px;
+}
+
+.footer-badge {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    background: #fff;
+    border: 3px solid #000;
+    padding: 10px 12px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+}
+
+.github-icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+}

@@ -1,0 +1,79 @@
+/* Dark mode overrides
+   Enabled by toggling the <link id="dark-style"> element.
+*/
+
+body {
+    /* Dark-mode version of the grid background */
+    background-color: #0f1115;
+    color: #e9edf1;
+    opacity: 1;
+    background-image: linear-gradient(rgba(233, 237, 241, 0.12) 1.5px, transparent 1.5px),
+        linear-gradient(to right, rgba(233, 237, 241, 0.12) 1.5px, #0f1115 1.5px);
+    background-size: 30px 30px;
+}
+
+.navbar {
+    background: #151924;
+    border-bottom-color: #e9edf1;
+}
+
+.navbar__toggle {
+    background: #151924;
+    border-color: #e9edf1;
+    box-shadow: 3px 3px 0 #e9edf1;
+    color: #e9edf1;
+}
+
+.panel {
+    background: #151924;
+    border-color: #e9edf1;
+    box-shadow: 4px 4px 0 #e9edf1;
+}
+
+.info-block {
+    border-top-color: rgba(233, 237, 241, 0.6);
+}
+
+input, select {
+    background: #0f1115;
+    color: #e9edf1;
+    border-color: #e9edf1;
+}
+
+.drop-zone {
+    background: #0f1115;
+    border-color: #e9edf1;
+}
+
+.drop-zone.dragover {
+    background: #3a2f00;
+}
+
+.file-list {
+    background: #151924;
+    border-color: #e9edf1;
+}
+
+.file-item {
+    border-bottom-color: #e9edf1;
+}
+
+.preview {
+    background: #0f1115;
+    border-color: #e9edf1;
+}
+
+.primary {
+    box-shadow: 4px 4px 0 #e9edf1;
+}
+
+/* Footer */
+.footer-badge {
+    background:#e9edf1;
+    color: #151924;
+    border-color: #e9edf1;
+}
+
+.github-link {
+    color: inherit;
+}
