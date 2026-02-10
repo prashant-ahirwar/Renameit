@@ -138,4 +138,6 @@ def index():
 # Run App
 # ------------------------
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Default port for local/dev (Render also provides a PORT env var)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port, debug=True)
