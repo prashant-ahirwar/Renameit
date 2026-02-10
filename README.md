@@ -12,8 +12,12 @@ A clean, fast bulk file renamer that lets you **upload files, apply consistent n
 
 ## Demo / Screenshots
 
-> - `assets/light.png`
-> - `assets/dark.png`
+-Light Mode
+<img width="1919" height="868" alt="Screenshot 2026-02-10 160520" src="https://github.com/user-attachments/assets/d2b6a627-538a-4b0e-9d40-bb9a4648d5ae" />
+
+-Dark Mode
+<img width="1919" height="870" alt="Screenshot 2026-02-10 160545" src="https://github.com/user-attachments/assets/35d6a9d7-022b-4174-830c-06f97b4b8f8e" />
+
 
 ---
 
